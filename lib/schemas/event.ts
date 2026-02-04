@@ -1,17 +1,16 @@
 import mongoose from "mongoose";
 const { Schema, Document } = mongoose;
 
-export interface IEvent extends Document {
-  title: string;
-  image?: string;
-  date?: string;
-  description?: string;
-  venue?: string;
-  link?: string;
-  createdAt?: Date;
+export interface IEvent {
+  title?: string | null;
+  date?: string | null;
+  venue?: string | null;
+  description?: string | null;
+  link?: string | null;
+  image?: string | null;
 }
 
-const eventSchema = new Schema<IEvent>(
+const eventSchema = new Schema(
   {
     title: {
       type: String,

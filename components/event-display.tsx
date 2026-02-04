@@ -16,10 +16,10 @@ export function EventDisplaySkeleton() {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-2 justify-center">
-        {Array.from({ length: 9 }).map((_, idx : number) => {
+        {Array.from({ length: 9 }).map((_, idx: number) => {
           return (
             <Card className="w-full h-105 rounded-none border" key={idx}>
-              <Skeleton className="w-full h-full"/>
+              <Skeleton className="w-full h-full" />
             </Card>
           );
         })}
@@ -29,13 +29,13 @@ export function EventDisplaySkeleton() {
 }
 
 export default async function EventDisplay() {
-  const events = await getEvents();
+  const events = (await getEvents()) || [];
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-2 justify-center">
         {events.map((event: IEvent) => {
           return (
-            <a href={event.link} key={event.title} target="main">
+            <a href={event.link || "#"} key={event.title} target="main">
               <Card className="w-full h-full py-0 pb-4 rounded-none">
                 <CardHeader className="w-full aspect-video relative">
                   <Image src={`${event.image}`} fill preload alt="" />
