@@ -1,4 +1,5 @@
-"use server";
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 import connectDB from "@/lib/mongodb";
 import chromium from "@sparticuz/chromium";
@@ -7,6 +8,10 @@ import Event from "@/lib/schemas/event";
 import { unstable_cache } from "next/cache";
 
 const SOURCE_URL = process.env.NEXT_PUBLIC_SOURCE_URL;
+const executablePath =
+  process.env.NODE_ENV === "production"
+    ? await chromium.executablePath()
+    : undefined;
 
 async function scrapeAndStoreEvents() {
   if (!SOURCE_URL) {
@@ -17,7 +22,7 @@ async function scrapeAndStoreEvents() {
 
   const browser = await puppeteer.launch({
     args: chromium.args,
-    executablePath: await chromium.executablePath(),
+    executablePath,
     headless: true,
   });
 

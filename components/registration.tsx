@@ -38,7 +38,7 @@ export default async function Registration() {
           asChild
         >
           <Avatar className="size-9 border">
-            <AvatarImage src={`${session?.user?.image}`} />
+            <AvatarImage src={`${session?.user?.image}`} alt="" />
             <AvatarFallback>
               {session?.user?.name?.slice(0, 2).toUpperCase()}
             </AvatarFallback>

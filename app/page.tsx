@@ -26,6 +26,7 @@ export default async function Home() {
         </div>
       </section>
       <section>
+        <h2 className="font-bungee text-3xl mb-8">Events</h2>
         <Suspense
           fallback={
             <>
@@ -33,7 +34,6 @@ export default async function Home() {
             </>
           }
         >
-          <h2 className="font-bungee text-3xl mb-8">Events</h2>
           <EventDisplay />
         </Suspense>
       </section>
