@@ -1,4 +1,5 @@
 "use server";
+export const runtime = "nodejs"; // ✅ important
 
 import connectDB from "@/lib/mongodb";
 import chromium from "@sparticuz/chromium";
