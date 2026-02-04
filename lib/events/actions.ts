@@ -2,10 +2,11 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 import connectDB from "@/lib/mongodb";
-import chromium from "@sparticuz/chromium";
-import puppeteer from "puppeteer-core";
 import Event from "@/lib/schemas/event";
 import { unstable_cache } from "next/cache";
+import chromium from "@sparticuz/chromium";
+import puppeteer from "puppeteer-core";
+
 
 const SOURCE_URL = process.env.NEXT_PUBLIC_SOURCE_URL;
 const executablePath =

@@ -30,11 +30,6 @@ const eventSchema = new Schema(
     link: {
       type: String,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now(),
-      expires: 120,
-    },
   },
   {
     timestamps: true,
