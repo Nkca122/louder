@@ -28,9 +28,9 @@ export default function Header() {
             <p className="text-xl font-bold font-bungee">Eventify</p>
           </div>
           <div className="flex justify-center items-center gap-2">
-            {/* <Suspense fallback={<Spinner className="size-8" />}>
+            <Suspense fallback={<Spinner className="size-8" />}>
               <Registration />
-            </Suspense> */}
+            </Suspense>
 
             <nav>
               <Drawer direction="right">
